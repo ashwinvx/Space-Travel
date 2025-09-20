@@ -1,0 +1,86 @@
+/* --- Container and Grid Layout --- */
+.spacecrafts-container {
+    font-family: Arial, sans-serif;
+    padding: 2rem;
+    background-color: #f4f7f9;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.spacecraft-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    margin-top: 2rem;
+}
+
+/* --- Individual Card Styling --- */
+.spacecraft-card {
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+}
+
+.spacecraft-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* --- Thumbnail Styling (new/updated) --- */
+.spacecraft-thumbnail {
+    width: 80px;
+    /* Set a fixed size for the thumbnail */
+    height: 80px;
+    object-fit: cover;
+    /* Crop the image to cover the container */
+    border-radius: 50%;
+    /* Make the thumbnail circular */
+    border: 2px solid #e0e0e0;
+    /* Optional: Add a light border */
+}
+
+/* --- Content Styling --- */
+.spacecraft-details {
+    flex-grow: 1;
+    /* Allows the details to take up remaining space */
+}
+
+.spacecraft-details h3 {
+    font-size: 1.5rem;
+    margin-top: 0;
+    margin-bottom: 0.5rem;
+    color: #2c3e50;
+}
+
+.spacecraft-details ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    color: #7f8c8d;
+}
+
+.spacecraft-details ul li {
+    font-size: 1rem;
+    line-height: 1.5;
+}
+
+/* --- Responsive Adjustments --- */
+@media (max-width: 600px) {
+    .spacecrafts-container {
+        padding: 1rem;
+    }
+
+    .spacecraft-card {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .spacecraft-card h3 {
+        font-size: 1.25rem;
+    }
+}
