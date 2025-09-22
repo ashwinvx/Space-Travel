@@ -4,17 +4,23 @@ import "./App.css"
 //pages
 import Home from "./pages/Homepage.jsx";
 import Spacecrafts, { spacecraftsLoader } from "./pages/Spacecrafts.jsx";
+import Spacecraft, { spacecraftLoader } from "./pages/Spacecraft.jsx";
 import Planets, { planetsLoader } from "./pages/Planets.jsx";
 import NotFound from "./pages/NotFound.jsx";
 
 //layouts
 import RootLayout from "./layouts/RootLayout.jsx";
+import SpacecraftLayout from "./layouts/SpacecraftLayout.jsx";
 
 
 const router = createBrowserRouter(createRoutesFromElements(
   <Route path="/" element={ <RootLayout /> }>
     <Route index element={ <Home /> } />
-    <Route path="spacecrafts" element={ <Spacecrafts /> } loader={ spacecraftsLoader } />
+    <Route path="spacecrafts" element={ <SpacecraftLayout /> } >
+      <Route index element={ <Spacecrafts /> } loader={ spacecraftsLoader } />
+      <Route path=":id" element={ <Spacecraft /> } loader={ spacecraftLoader } />
+      <Route path="build" />
+    </Route>
     <Route path="planets" element={ <Planets /> } loader={ planetsLoader } />
     <Route path="*" element={ <NotFound /> } />
   </Route>

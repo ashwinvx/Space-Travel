@@ -1,4 +1,4 @@
-import { useLoaderData } from "react-router-dom";
+import { useLoaderData, Link } from "react-router-dom";
 import SpaceTravelApi from "../services/SpaceTravelApi.js";
 import "./Spacecrafts.css";
 export default function Spacecrafts() {
@@ -7,7 +7,7 @@ export default function Spacecrafts() {
         <div className="spacecrafts-container">
             <div className="spacecraft-grid">
                 { spacecrafts.map(spacecraft => (
-                    <div key={ spacecraft.id } className="spacecraft-card">
+                    <Link to={ spacecraft.id.toString() } key={ spacecraft.id } className="spacecraft-card">
                         <div className="spacecraft-image-container">
                             <img
                                 src={ spacecraft.pictureUrl }
@@ -21,7 +21,7 @@ export default function Spacecrafts() {
                                 <li>Capacity: { spacecraft.capacity }</li>
                             </ul>
                         </div>
-                    </div>
+                    </Link>
                 )) }
             </div>
         </div>
