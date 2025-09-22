@@ -6,22 +6,25 @@ export default function Spacecrafts() {
     return (
         <div className="spacecrafts-container">
             <div className="spacecraft-grid">
+                <Link to="/spacecrafts/new" className="build-button">
+                    Build a Spacecraft
+                </Link>
                 { spacecrafts.map(spacecraft => (
-                    <Link to={ spacecraft.id.toString() } key={ spacecraft.id } className="spacecraft-card">
-                        <div className="spacecraft-image-container">
+                    <div key={ spacecraft.id } className="spacecraft-card">
+                        <Link to={ spacecraft.id.toString() } className="spacecraft-image-container">
                             <img
                                 src={ spacecraft.pictureUrl }
                                 alt={ `Image of ${spacecraft.name}` }
                                 className="spacecraft-thumbnail"
                             />
-                        </div>
+                        </Link>
                         <div className="spacecraft-details">
                             <h3>{ spacecraft.name }</h3>
                             <ul>
                                 <li>Capacity: { spacecraft.capacity }</li>
                             </ul>
                         </div>
-                    </Link>
+                    </div>
                 )) }
             </div>
         </div>
