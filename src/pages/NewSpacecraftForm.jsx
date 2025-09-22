@@ -54,5 +54,5 @@ export const createSpacecraftAction = async ({ request }) => {
     });
 
     // Redirect the user to another page after a successful submission
-    return redirect("/");
+    return redirect("/spacecrafts");
 }

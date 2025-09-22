@@ -1,6 +1,7 @@
 import { useLoaderData, Link } from "react-router-dom";
 import SpaceTravelApi from "../services/SpaceTravelApi.js";
 import "./Spacecrafts.css";
+import SpacecraftRow from "./SpaceCraftRow.jsx";
 export default function Spacecrafts() {
     const spacecrafts = useLoaderData();
     return (
@@ -23,6 +24,7 @@ export default function Spacecrafts() {
                             <ul>
                                 <li>Capacity: { spacecraft.capacity }</li>
                             </ul>
+                            <SpacecraftRow key={ spacecraft.id } spacecraft={ spacecraft } />
                         </div>
                     </div>
                 )) }
@@ -35,4 +37,10 @@ export const spacecraftsLoader = async () => {
     const res = await SpaceTravelApi.getSpacecrafts();
     console.log('res-->', res.data);
     return res.data;
+}
+
+export const destroySpacecraftAction = async ({ params }) => {
+    const { id } = params;
+    await SpaceTravelApi.destroySpacecraftById({ id });
+    return {};
 }

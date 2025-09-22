@@ -16,6 +16,8 @@
 
 /* --- Individual Card Styling --- */
 .spacecraft-card {
+    display: flex;
+    justify-content: space-between;
     background-color: #ffffff;
     border-radius: 8px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
@@ -104,4 +106,32 @@
 
 .build-button:hover {
     background-color: #0056b3;
+}
+
+.destroy-form {
+    margin: 0;
+    padding: 0;
+    width: fit-content;
+}
+
+.destroy-button {
+    padding: 8px 16px;
+    font-size: 0.9rem;
+    font-weight: bold;
+    color: #fff;
+    background-color: #dc3545;
+    /* Red color for delete action */
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.destroy-button:hover {
+    background-color: #c82333;
+}
+
+.destroy-button:disabled {
+    background-color: #cccccc;
+    cursor: not-allowed;
 }

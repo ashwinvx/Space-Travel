@@ -3,7 +3,7 @@ import "./App.css"
 
 //pages
 import Home from "./pages/Homepage.jsx";
-import Spacecrafts, { spacecraftsLoader } from "./pages/Spacecrafts.jsx";
+import Spacecrafts, { destroySpacecraftAction, spacecraftsLoader } from "./pages/Spacecrafts.jsx";
 import Spacecraft, { spacecraftLoader } from "./pages/Spacecraft.jsx";
 import NewSpacecraftForm, { createSpacecraftAction } from "./pages/NewSpacecraftForm.jsx";
 import Planets, { planetsLoader } from "./pages/Planets.jsx";
@@ -22,6 +22,7 @@ const router = createBrowserRouter(createRoutesFromElements(
       <Route index element={ <Spacecrafts /> } loader={ spacecraftsLoader } />
       <Route path=":id" element={ <Spacecraft /> } loader={ spacecraftLoader } />
       <Route path="new" element={ <NewSpacecraftForm /> } action={ createSpacecraftAction } />
+      <Route path=":id/destroy" action={ destroySpacecraftAction } />
     </Route>
     <Route path="planets" element={ <Planets /> } loader={ planetsLoader } />
     <Route path="*" element={ <NotFound /> } />
