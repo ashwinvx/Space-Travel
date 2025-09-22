@@ -1,0 +1,87 @@
+/* Basic styling for the form container */
+form {
+    max-width: 600px;
+    margin: 2rem auto;
+    padding: 2rem;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Style for the form's fieldset and legend */
+fieldset {
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 1.5rem;
+}
+
+legend {
+    font-size: 1.5rem;
+    font-weight: bold;
+    padding: 0 10px;
+    color: #333;
+}
+
+/* Style for each label-input group */
+label {
+    display: block;
+    margin-bottom: 1rem;
+    font-weight: 500;
+    color: #555;
+}
+
+/* Style for all input and textarea elements */
+input[type="text"],
+input[type="number"],
+input[type="url"],
+textarea {
+    width: 100%;
+    padding: 12px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    /* Ensures padding doesn't affect width */
+    transition: border-color 0.2s ease-in-out;
+}
+
+/* Style for when an input or textarea is focused */
+input[type="text"]:focus,
+input[type="number"]:focus,
+input[type="url"]:focus,
+textarea:focus {
+    border-color: #007bff;
+    outline: none;
+}
+
+/* Style for the textarea to prevent resizing */
+textarea {
+    resize: vertical;
+}
+
+/* Style for the submit button */
+button[type="submit"] {
+    display: block;
+    width: 100%;
+    padding: 15px;
+    margin-top: 1.5rem;
+    font-size: 1rem;
+    font-weight: bold;
+    color: #fff;
+    background-color: #007bff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+/* Hover effect for the submit button */
+button[type="submit"]:hover:not(:disabled) {
+    background-color: #0056b3;
+}
+
+/* Style for the disabled state of the button */
+button[type="submit"]:disabled {
+    background-color: #cccccc;
+    cursor: not-allowed;
+}
