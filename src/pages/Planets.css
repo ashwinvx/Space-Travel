@@ -84,3 +84,89 @@
         font-size: 1.25rem;
     }
 }
+
+
+.stationed-spacecrafts h4 {
+    margin-bottom: 0.5rem;
+    font-size: 1.1rem;
+    color: #666;
+}
+
+.spacecrafts-inline-list {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    /* Use flexbox to arrange items horizontally */
+    flex-wrap: wrap;
+    /* Allows items to wrap to a new line if necessary */
+    gap: 1rem;
+    /* Add some space between the spacecraft items */
+    margin: 0;
+}
+
+.spacecraft-details {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    /* Space between the image and the text */
+    margin-bottom: 1rem;
+    padding: 0.5rem;
+    background-color: #fff;
+    border-radius: 4px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+.spacecraft-picture {
+    width: 60px;
+    /* Adjust size as needed */
+    height: 60px;
+    object-fit: cover;
+    /* Ensures the image covers the area without distortion */
+    border-radius: 50%;
+    /* Makes the image circular */
+}
+
+/* Add a style for the case where a picture is not available */
+.spacecraft-details .spacecraft-picture:not([src]) {
+    display: none;
+}
+
+.no-spacecrafts-message {
+    color: #999;
+    font-style: italic;
+}
+
+/* src/components/PlanetsPage.css */
+/* ... existing styles ... */
+
+.spacecraft-details.selected {
+    border: 2px solid #007bff;
+    box-shadow: 0 0 8px rgba(0, 123, 255, 0.5);
+    cursor: pointer;
+}
+
+.clickable-planet {
+    cursor: pointer;
+    color: #007bff;
+    text-decoration: underline;
+}
+
+.global-loading {
+    position: fixed;
+    bottom: 1rem;
+    right: 1rem;
+    padding: 1rem;
+    background-color: #007bff;
+    color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.error-message {
+    background-color: #f8d7da;
+    color: #721c24;
+    border: 1px solid #f5c6cb;
+    border-radius: 4px;
+    padding: 1rem;
+    margin-bottom: 1.5rem;
+}

@@ -24,8 +24,8 @@ export default function Spacecrafts() {
                             <ul>
                                 <li>Capacity: { spacecraft.capacity }</li>
                             </ul>
-                            <SpacecraftRow key={ spacecraft.id } spacecraft={ spacecraft } />
                         </div>
+                        <SpacecraftRow key={ spacecraft.id } spacecraft={ spacecraft } />
                     </div>
                 )) }
             </div>
