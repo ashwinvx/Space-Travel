@@ -19,12 +19,14 @@ export default function Spacecrafts() {
                                 className="spacecraft-thumbnail"
                             />
                         </Link>
-                        <div className="spacecraft-details">
-                            <h3>{ spacecraft.name }</h3>
-                            <ul>
-                                <li>Capacity: { spacecraft.capacity }</li>
-                            </ul>
-                        </div>
+                        <li className="spacecraft-details">
+                            <div>
+                                <h3>{ spacecraft.name }</h3>
+                                <ul>
+                                    <li>Capacity: { spacecraft.capacity }</li>
+                                </ul>
+                            </div>
+                        </li>
                         <SpacecraftRow key={ spacecraft.id } spacecraft={ spacecraft } />
                     </div>
                 )) }
